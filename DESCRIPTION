@@ -1,0 +1,13 @@
+Package: ggsunburst
+Title: Create sunburst plots using ggplot
+Version: 0.0.0.9000
+Authors@R: 
+    person("Pramoda", "Jayasinghe", , "sachi322149@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5398-163X"))
+Description: A package to create sunburst plots.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
+Imports: 
+    dplyr
