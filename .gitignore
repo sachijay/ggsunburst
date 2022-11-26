@@ -53,3 +53,4 @@ rsconnect/
 # RStudio project files
 .Rproj
 .Rbuildignore
+docs
