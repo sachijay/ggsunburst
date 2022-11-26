@@ -1,0 +1,9 @@
+pandoc: 2.19.2
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles: {}
+last_built: 2022-11-26T08:42Z
+urls:
+  reference: https://sachijay.github.io/ggsunburst/reference
+  article: https://sachijay.github.io/ggsunburst/articles
+
