@@ -48,3 +48,8 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 .Rproj.user
+
+
+# RStudio project files
+.Rproj
+.Rbuildignore
