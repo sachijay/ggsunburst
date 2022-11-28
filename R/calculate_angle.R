@@ -10,6 +10,7 @@
 #' @return The angle correction as should be given to ggplot.
 #'
 #' @examples
+#' calculate_angle(0.1, 0.6)
 calculate_angle <- function(box_max, box_min){
   
   if(!is.numeric(box_max)){
