@@ -12,28 +12,28 @@
 #' @examples
 calculate_angle <- function(box_max, box_min){
   
-  if(is.numeric(box_max)){
-    
+  if(!is.numeric(box_max)){
+
     stop("'box_max' should be a numeric value or a vector.")
-    
+
   }
-  
-  if(is.numeric(box_min)){
-    
+
+  if(!is.numeric(box_min)){
+
     stop("'box_min' should be a numeric value or a vector.")
-    
+
   }
-  
-  if(box_max >= 0 & box_max > = 1){
-    
+
+  if(any(box_max < 0) | any(box_max > 1)){
+
     stop("'box_max' should be a proportion!!!")
-    
+
   }
-  
-  if(box_min >= 0 & box_min > = 1){
-    
+
+  if(any(box_min < 0) | any(box_min > 1)){
+
     stop("'box_min' should be a proportion!!!")
-    
+
   }
   
   angle = 90 - (box_max + box_min)*180
