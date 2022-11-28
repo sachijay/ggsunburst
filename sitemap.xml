@@ -22,6 +22,21 @@
     <loc>https://sachijay.github.io/ggsunburst/news/index.html</loc>
   </url>
   <url>
+    <loc>https://sachijay.github.io/ggsunburst/reference/calculate_alpha.html</loc>
+  </url>
+  <url>
+    <loc>https://sachijay.github.io/ggsunburst/reference/calculate_alpha_wo_fill.html</loc>
+  </url>
+  <url>
+    <loc>https://sachijay.github.io/ggsunburst/reference/calculate_angle.html</loc>
+  </url>
+  <url>
+    <loc>https://sachijay.github.io/ggsunburst/reference/draw_sunburst_plot.html</loc>
+  </url>
+  <url>
+    <loc>https://sachijay.github.io/ggsunburst/reference/get_sunplot_dataset.html</loc>
+  </url>
+  <url>
     <loc>https://sachijay.github.io/ggsunburst/reference/index.html</loc>
   </url>
 </urlset>

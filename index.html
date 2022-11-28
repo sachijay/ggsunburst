@@ -73,7 +73,58 @@
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://sachijay.github.io/ggsunburst/">ggsunburst</a></span><span class="op">)</span></span>
-<span><span class="co">## basic example code</span></span></code></pre></div>
+<span></span>
+<span><span class="va">in_dat</span> <span class="op">&lt;-</span> <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
+<span>  level1_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"l1 A"</span>, times <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"l1 B"</span>, times <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  level2_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"l2 A"</span>, <span class="st">"l2 A"</span>, <span class="st">"l2 B"</span>,</span>
+<span>    <span class="st">"l2 C"</span>, <span class="st">"l2 C"</span>, <span class="st">"l2 D"</span>, <span class="st">"l2 D"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  level3_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"l3 A"</span>, <span class="st">"l3 B"</span>, <span class="st">"l3 C"</span>,</span>
+<span>    <span class="st">"l3 D"</span>, <span class="st">"l3 E"</span>, <span class="st">"l3 F"</span>, <span class="st">"l3 G"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  values_var <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>    <span class="fl">123</span>, <span class="fl">456</span>, <span class="fl">798</span>,</span>
+<span>    <span class="fl">987</span>, <span class="fl">654</span>, <span class="fl">321</span>, <span class="fl">159</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">plot_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_sunplot_dataset.html">get_sunplot_dataset</a></span><span class="op">(</span></span>
+<span>  .dat <span class="op">=</span> <span class="va">in_dat</span>,</span>
+<span>  <span class="va">level1_var</span>, <span class="va">level2_var</span>, <span class="va">level3_var</span>,</span>
+<span>  .count_var <span class="op">=</span> <span class="va">values_var</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">plot_dat</span></span>
+<span><span class="co">#&gt; # A tibble: 14 × 7</span></span>
+<span><span class="co">#&gt;    .name .level .fill .box_min .box_max .alpha .angle</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;  &lt;int&gt; &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 &lt;NA&gt;       0 &lt;NA&gt;    0        1       0     -90   </span></span>
+<span><span class="co">#&gt;  2 l1 A       1 l1 A    0        0.394   1      19.1 </span></span>
+<span><span class="co">#&gt;  3 l1 B       1 l1 B    0.394    1       1      19.1 </span></span>
+<span><span class="co">#&gt;  4 l2 A       2 l1 A    0        0.166   0.75   60.2 </span></span>
+<span><span class="co">#&gt;  5 l2 B       2 l1 A    0.166    0.394   0.75  -10.7 </span></span>
+<span><span class="co">#&gt;  6 l2 C       2 l1 B    0.394    0.863   0.75   43.8 </span></span>
+<span><span class="co">#&gt;  7 l2 D       2 l1 B    0.863    1       0.75  -65.3 </span></span>
+<span><span class="co">#&gt;  8 l3 A       3 l1 A    0        0.0352  0.667  83.7 </span></span>
+<span><span class="co">#&gt;  9 l3 B       3 l1 A    0.0352   0.166   0.667  53.9 </span></span>
+<span><span class="co">#&gt; 10 l3 C       3 l1 A    0.166    0.394   0.667 -10.7 </span></span>
+<span><span class="co">#&gt; 11 l3 D       3 l1 B    0.394    0.676   0.667  77.5 </span></span>
+<span><span class="co">#&gt; 12 l3 E       3 l1 B    0.676    0.863   0.667  -6.95</span></span>
+<span><span class="co">#&gt; 13 l3 F       3 l1 B    0.863    0.955   0.667 -57.1 </span></span>
+<span><span class="co">#&gt; 14 l3 G       3 l1 B    0.955    1       0.667 -81.8</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/draw_sunburst_plot.html">draw_sunburst_plot</a></span><span class="op">(</span></span>
+<span>  .dat <span class="op">=</span> <span class="va">plot_dat</span>,</span>
+<span>  .label_txt_size <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>  palette <span class="op">=</span> <span class="st">"Dark2"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: Removed 1 rows containing missing values (`geom_text()`).</span></span></code></pre></div>
+<p><img src="reference/figures/README-example-1.png" width="100%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
