@@ -21,20 +21,20 @@
 #' @examples
 #' in_dat <- tibble::tibble(
 #' level1_var = c(
-#' rep("l1 A", times = 7),
-#' rep("l1 B", times = 8)
+#' rep("l1 A", times = 3),
+#' rep("l1 B", times = 4)
 #' ),
 #' level2_var = c(
-#' "l2 A", "l2 B", "l2 C", "l2 D", "l2 E", "l2 F", "l2 G",
-#' "l2 H", "l2 I", "l2 J", "l2 K", "l2 L", "l2 M", "l2 N", "l2 O"
+#' "l2 A", "l2 A", "l2 B", 
+#' "l2 C", "l2 C", "l2 D", "l2 D"
 #' ),
 #' level3_var = c(
-#' "l3 A", "l3 B", "l3 C", "l3 D", "l3 E", "l3 F", "l3 G",
-#' "l3 H", "l3 I", "l3 J", "l3 K", "l3 L", "l3 M", "l3 N", "l3 O"
+#' "l3 A", "l3 B", "l3 C", 
+#' "l3 D", "l3 E", "l3 F", "l3 G"
 #' ),
 #' values_var = c(
-#' 123, 456, 2018, 1403, 895, 255, 31,
-#' 92897, 17710, 14048, 7828, 6953, 6423, 4539, 657
+#' 123, 456, 798, 
+#' 987, 654, 321, 159
 #' )
 #' )
 #' 
@@ -46,7 +46,6 @@
 #' level1_var, level2_var, level3_var,
 #' .count_var = values_var
 #' )
-
 get_sunplot_dataset <- function(
     .dat,
     ...,
