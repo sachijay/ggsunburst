@@ -4,12 +4,14 @@
 \alias{draw_sunburst_plot}
 \title{Create the sunburst plot.}
 \usage{
-draw_sunburst_plot(.dat, .label_txt_size = 1, ...)
+draw_sunburst_plot(.dat, .label_txt_size = 1, .linewidth = 1, ...)
 }
 \arguments{
 \item{.dat}{A data frame (or tibble) for the plot with specific requirements. Use the \code{get_sunplot_dataset()} to generate this dataset.}
 
 \item{.label_txt_size}{A numeric value with the size of the text labels.}
+
+\item{.linewidth}{Line width of the segments.}
 
 \item{...}{Passed to \code{ggplot2::scale_fill_brewer()} allowing to change plot colours.}
 }

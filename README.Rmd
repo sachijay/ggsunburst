@@ -57,6 +57,8 @@ in_dat <- tibble::tibble(
   )
 )
 
+in_dat
+
 plot_dat <- get_sunplot_dataset(
   .dat = in_dat,
   level1_var, level2_var, level3_var,
@@ -68,6 +70,7 @@ plot_dat
 draw_sunburst_plot(
   .dat = plot_dat,
   .label_txt_size = 4,
+  .linewidth = 0.5,
   palette = "Dark2"
 )
 ```
