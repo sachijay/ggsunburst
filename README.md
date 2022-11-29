@@ -48,6 +48,18 @@ in_dat <- tibble::tibble(
   )
 )
 
+in_dat
+#> # A tibble: 7 × 4
+#>   level1_var level2_var level3_var values_var
+#>   <chr>      <chr>      <chr>           <dbl>
+#> 1 l1 A       l2 A       l3 A              123
+#> 2 l1 A       l2 A       l3 B              456
+#> 3 l1 A       l2 B       l3 C              798
+#> 4 l1 B       l2 C       l3 D              987
+#> 5 l1 B       l2 C       l3 E              654
+#> 6 l1 B       l2 D       l3 F              321
+#> 7 l1 B       l2 D       l3 G              159
+
 plot_dat <- get_sunplot_dataset(
   .dat = in_dat,
   level1_var, level2_var, level3_var,
@@ -76,6 +88,7 @@ plot_dat
 draw_sunburst_plot(
   .dat = plot_dat,
   .label_txt_size = 4,
+  .linewidth = 0.5,
   palette = "Dark2"
 )
 #> Warning: Removed 1 rows containing missing values (`geom_text()`).

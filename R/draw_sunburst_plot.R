@@ -2,6 +2,7 @@
 #'
 #' @param .dat A data frame (or tibble) for the plot with specific requirements. Use the `get_sunplot_dataset()` to generate this dataset.
 #' @param .label_txt_size A numeric value with the size of the text labels.
+#' @param .linewidth Line width of the segments.
 #' @param ... Passed to `ggplot2::scale_fill_brewer()` allowing to change plot colours.
 #'
 #' @return A ggplot object.
@@ -41,6 +42,7 @@
 draw_sunburst_plot <- function(
     .dat, 
     .label_txt_size = 1,
+    .linewidth = 1,
     ...
 ){
   
@@ -59,7 +61,8 @@ draw_sunburst_plot <- function(
       mapping = ggplot2::aes(
         alpha = .alpha
       ),
-      colour = ifelse(is.na(.dat$.fill), NA, "gray90")
+      colour = ifelse(is.na(.dat$.fill), NA, "gray90"),
+      linewidth = .linewidth
     ) + 
     ggplot2::geom_text(
       mapping = ggplot2::aes(
